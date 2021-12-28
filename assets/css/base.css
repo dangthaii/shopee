@@ -31,7 +31,11 @@ ul {
 html {
    font-size: 62.5%;
    font-family: 'Roboto', sans-serif;
-   scroll-behavior: smooth;
+   scroll-behavior: instant;
+}
+
+textarea {
+   resize: none;
 }
 
 
@@ -111,15 +115,16 @@ html {
 }
 
 /* Scroll bar */
-::-webkit-scrollbar {
+::-webkit-scrollbar{
    width: 8px;
+   height: 8px;
 }
 
  /* Track */
  ::-webkit-scrollbar-track {
    background: #f1f1f1; 
 }
-  
+
  /* Handle */
  ::-webkit-scrollbar-thumb {
    background: #888; 
@@ -128,12 +133,16 @@ html {
  
  /* Handle on hover */
  ::-webkit-scrollbar-thumb:hover {
-   background: #555; 
+   background: #999; 
 }
 
 /* Grid */
 .ml-10 {
    margin-left: 10px;
+}
+
+.mt-0 {
+   margin-top: 0px!important;
 }
 
 .grid {
@@ -153,7 +162,7 @@ html {
    margin-right: -5px;
 }
 
-.col-2, .col-10, .col-2-4, .col-4-8, .col-7-2 {
+.col-2, .col-10, .col-2-4, .col-4-8, .col-7-2, .col-9-6, .col-12, .col-3 {
    padding-left: 5px;
    padding-right: 5px;
 }
@@ -166,6 +175,10 @@ html {
    width: 20%;
 }
 
+.col-9-6 {
+   width: 80%;
+}
+
 .col-4-8 {
    width: 40%;
 }
@@ -176,6 +189,14 @@ html {
 
 .col-10 {
    width: 83.3334%;
+}
+
+.col-12 {
+   width: 100%;
+}
+
+.col-3 {
+   width: 25%;
 }
 
 .hover-father {
@@ -205,12 +226,12 @@ html {
 }
 
 .place--quangnam {
-   background-color: rgb(9, 136, 158);
+   background-color: rgb(171, 5, 236);
    color: white;
 }
 
 .place--hcm {
-   background-color: rgb(171, 5, 236);
+   background-color: #03a9f4;
    color: white;
 }
 
@@ -282,7 +303,7 @@ html {
 
 .btn--disabled {
    filter: opacity(0.4);
-   cursor: default;
+   cursor: default!important;
 }
 
 /* Form */
@@ -353,6 +374,49 @@ html {
    user-select: none;
 }
 
+/* Loading */
+.loading {
+   position: fixed;
+   z-index: 2;
+   display: flex;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background-color: rgba(255, 255, 255, 0.253);
+}
+
+.loading-wrapper {
+   margin: auto;
+   text-align: center;
+   background-color: #fdf0eb;
+   border-radius: 45px;
+   padding: 30px 50px;
+   box-shadow: 0 0 8px 0 var(--light-primary);
+}
+
+.loading-text {
+   font-size: 2.5rem;
+   margin-bottom: 0.6em;
+   color: rgb(235, 82, 12);
+}
+
+.loading-icon {
+   font-size: 4.0rem;
+   color: var(--primary);
+   animation: circle linear 3s;
+}
+
+@keyframes circle {
+   0% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: rotate(2000deg);
+   }
+}
+
 /* Modal */
 .modal {
    --growth-form: 0.6;
@@ -387,6 +451,7 @@ html {
 /* General Toast */
 #toast {
    position: fixed;
+   z-index: 2;
    right: 2%;
    top: 20%;
    display: flex;
