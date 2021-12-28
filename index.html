@@ -5,11 +5,14 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Shopee Việt Nam</title>
+   <link rel="icon" href="./assets/img/icon.png">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="stylesheet" href="./themify-icons/themify-icons.css">
    <!-- Link cdn font awesome updated -->
-   <link rel="stylesheet" href="./Fontawesome_6_pro/css/all.css">
+   <link rel="stylesheet" href="./font/css/all.css">
    <link rel="stylesheet" href="./assets/css/base.css">
    <link rel="stylesheet" href="./assets/css/main.css">
    <link rel="stylesheet" href="./assets/css/detail.css">
@@ -21,7 +24,7 @@
             <nav class="navbar">
                <ul class="navbar__list">
                   <li class="navbar__list__item--seperate">Kênh người bán</li>
-                  <li class="navbar__list__item--seperate">Trở thành Người bán Shopee</li>
+                  <li class="navbar__list__item--seperate header__become">Trở thành Người bán Shopee</li>
                   <li class="navbar__list__item--seperate header__download-item">
                      Tải ứng dụng
                      <div class="header__qr">
@@ -148,10 +151,12 @@
                   <li class="header__login-item header__login-and-register hide">Đăng nhập</li>
                   <li class="header__login-user hide">
                      <a href="" class="header__user-link">
-                        <i class="header__user-img fa-solid fa-user"></i>
+                        <img class="header__user-img" src=""></img>
                         <span class="header__user-username">Dangthaihus</span>
                      </a>
                      <div class="header__user-popup shadow-down--light">
+                        <a href="" class="header__user-item header__user-sell hide">Đăng sản phẩm</a>
+                        <a href="" class="header__user-item header__user-owner hide">Sản phẩm của tôi</a>
                         <a href="" class="header__user-item">Tài khoản của tôi</a>
                         <a href="" class="header__user-item">Đơn mua</a>
                         <a href="" class="header__user-item header__user-signout">Đăng xuất</a>
@@ -211,10 +216,15 @@
                      <div class="header__product-number">4
                      </div>
                      <div class="header__notify header-product">
-                        <h3 class="header__notify-header">Sản Phẩm Mới Thêm</h3>
-                        <ul class="header__notify-list header__product-list">
+                        <div class="header-product-no-cart">
+                           <img class="header-product-no-cart-img" src="./assets/img/header_product/no-cart.png" alt="">
+                           <div class="header-product-no-cart-text">Chưa có sản phẩm nào</div>
+                        </div>
+                        
+                        <!-- <h3 class="header__notify-header">Sản Phẩm Mới Thêm</h3>
+                        <ul class="header__notify-list header__product-list"> -->
                            <!-- Items -->
-                        </ul>
+                        <!-- </ul>
                         <div class="header__product-total">
                            <span class="header__product-total-text">Tổng cộng: </span>
                            <span class="header__product-total-price header__notify-price price-pre">571.600</span>
@@ -229,14 +239,14 @@
                               </div>
                            </div>
                            <button class="btn btn--primary btn-header-view-product">Xem Giỏ Hàng</button>
-                        </footer>
+                        </footer> -->
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="category__container hide" id="category__container" >
+      <div class="category__container" id="category__container" >
          <div class="grid">
             <div class="row">
                <div class="col-2">
@@ -280,8 +290,8 @@
                      </h3>
                      <h4 class="category__filter-item-heading">Nơi Bán</h4>
                      <div class="category__filter-places">
-                        <span class="category__places-item  city-place place--all">Tất cả</span>
-                        <span class="category__places-item category__places-item--active city-place place--hanoi">Hà Nội</span>
+                        <span class="category__places-item category__places-item--active  city-place place--all">Tất cả</span>
+                        <span class="category__places-item city-place place--hanoi">Hà Nội</span>
                         <span class="category__places-item city-place place--danang">Đà Nẵng</span>
                         <span class="category__places-item city-place place--quangnam">Quảng Nam</span>
                         <span class="category__places-item city-place place--hcm">Hồ Chí Minh</span>
@@ -378,9 +388,9 @@
                   <div class="sortby">
                      <div class="sortby__option">
                         <span class="sortby__option-text">Sắp xếp theo</span>
-                        <button class="sortby__option-button btn btn--white sortby__option--active">Phổ Biến</button>
-                        <button class="sortby__option-button btn btn--white">Mới Nhất</button>
-                        <button class="sortby__option-button btn btn--white">Bán chạy</button>
+                        <button class="sortby__option-button sortby__option-button--popular btn btn--white">Phổ Biến</button>
+                        <button class="sortby__option-button--lastest sortby__option-button btn btn--white">Mới Nhất</button>
+                        <button class="sortby__option-button sortby__option-button--bestsell btn btn--white">Bán chạy</button>
                         <div class="sortby__selection-wrap">
                            <button class="sortby__selection-price btn btn--white">
                               <span>
@@ -389,8 +399,8 @@
                               <i class="fa-solid fa-angle-down"></i>
                            </button>
                            <ul class="sortby__selection">
-                              <li class="sortby__selection-item">Từ thấp đến cao</li>
-                              <li class="sortby__selection-item">Từ cao xuống thấp</li>
+                              <li class="sortby__selection-item sortby__selection-item--increase">Từ thấp đến cao</li>
+                              <li class="sortby__selection-item sortby__selection-item--decrease">Từ cao xuống thấp</li>
                            </ul>
                         </div>
                         
@@ -416,11 +426,12 @@
                      </div>
                   </div>
                   <div class="product" id="product">
+                     
                      <!-- push data from js -->
                   </div>
                   <div class="pagination-container">
                      <ul class="pagination shadow--light">
-                        <li class="pagination-item ">
+                        <!-- <li class="pagination-item ">
                            <a href="#category__container" class="pagination-item-link btn btn--disabled pagination-prev">
                               <i class="fa-regular fa-angle-left"></i>
                            </a>
@@ -435,7 +446,7 @@
                            <a href="#category__container" class="pagination-item-link btn pagination-next">
                               <i class="fa-regular fa-angle-right"></i>
                            </a>
-                        </li>
+                        </li> -->
                      </ul>
                   </div>
                   
@@ -445,38 +456,34 @@
          
          
       </div>
-      <div class="detail__container">
+      <div class="detail__container hide">
          <div class="grid">
             <header class="detail__header shadow--block">
                <div class="detail__breadcrumb">
                   <a href="#" class="detail__breadcrumb-item detail__breadcrumb-link">Shopee</a>
                   <i class="fa-light fa-angle-right detail__breadcrumb-icon"></i>
-                  <span class="detail__breadcrumb-item">Gia đình</span>
+                  <span class="detail__breadcrumb-item detail__breadcrumb-item-value">Gia đình</span>
                   <i class="fa-light fa-angle-right detail__breadcrumb-icon"></i>
-                  <span class="detail__breadcrumb-item">Dép Quai Ngang Nam Nữ Hình Bông Lúa Sắc Nét 👟 Giá Đúc Tại Xưởng Siêu Rẻ Full Size Nam Nữ</span>
+                  <span class="detail__breadcrumb-item detail__breadcrumb-item-name">Dép Quai Ngang Nam Nữ Hình Bông Lúa Sắc Nét 👟 Giá Đúc Tại Xưởng Siêu Rẻ Full Size Nam Nữ</span>
                </div>
                <div class="detail__product">
                   <div class="row">
                      <div class="col-4-8">
                         <div class="detail__product-left">
-                           <div class="detail__product-img img-background" style="background-image: url();">
-
+                           <div class="detail__product-img img-background" style="background-image: url(&quot;./assets/img/product/1.png&quot;);">
+   
                            </div>
                            <div class="detail__product-slide">
-                              <div class="detail__product-slide-img-wrap">
-                                 <div class="detail__product-slide-img img-background" style="background-image: url('https://cf.shopee.vn/file/aa1b40e143716e0eb2e2a69d65e67bcd');"></div>
-                                 <div class="detail__product-slide-img img-background" style="background-image: url('https://cf.shopee.vn/file/aa1b40e143716e0eb2e2a69d65e67bcd');"></div>
-                                 <div class="detail__product-slide-img img-background" style="background-image: url('https://cf.shopee.vn/file/aa1b40e143716e0eb2e2a69d65e67bcd');"></div>
-                                 <div class="detail__product-slide-img detail__product-slide-img--active img-background" style="background-image: url('https://cf.shopee.vn/file/aa1b40e143716e0eb2e2a69d65e67bcd');"></div>
-                                 <div class="detail__product-slide-img img-background" style="background-image: url('https://cf.shopee.vn/file/aa1b40e143716e0eb2e2a69d65e67bcd');"></div>
-                              </div>
+                              <div class="detail__product-slide-img-wrap"><div class="detail__product-slide-img img-background detail__product-slide-img--active" data-id="0" style="background-image: url(&quot;./assets/img/product/1.png&quot;);"></div><div class="detail__product-slide-img img-background" data-id="1" style="background-image: url(&quot;./assets/img/product/1/2.png&quot;);"></div><div class="detail__product-slide-img img-background" data-id="2" style="background-image: url(&quot;./assets/img/product/1/3.png&quot;);"></div><div class="detail__product-slide-img img-background" data-id="3" style="background-image: url(&quot;./assets/img/product/1/4.png&quot;);"></div><div class="detail__product-slide-img img-background" data-id="4" style="background-image: url(&quot;./assets/img/product/1/5.png&quot;);"></div></div>
+                              <div class="detail__product-slide-btn-wrapper">
+                  <button class="detail__product-slide-btn detail__product-slide-prev">
+                     <i class="fa-light fa-angle-left detail__product-slide-icon detail__product-slide-icon-left"></i>
+                  </button>
+                  <button class="detail__product-slide-btn detail__product-slide-next">
+                     <i class="fa-light fa-angle-right detail__product-slide-icon detail__product-slide-icon-right"></i>
+                  </button>
+               </div>
                               
-                              <button class="detail__product-slide-btn detail__product-slide-prev">
-                                 <i class="fa-light fa-angle-left detail__product-slide-icon detail__product-slide-icon-left"></i>
-                              </button>
-                              <button class="detail__product-slide-btn detail__product-slide-next">
-                                 <i class="fa-light fa-angle-right detail__product-slide-icon detail__product-slide-icon-right"></i>
-                              </button>
                            </div>
                            <div class="detail__product-social">
                               <div class="detail__product-social-share">
@@ -504,18 +511,12 @@
                               <div class="detail__product-title">
                                  <span class="favourite detail__product-title-favourite">Yêu Thích</span>
                                  <span class="detail__product-title-content">Dép Quai Ngang Nam Nữ Hình Bông Lúa Sắc Nét 👟 Giá Đúc Tại Xưởng Siêu Rẻ Full Size Nam Nữ</span>
-
+   
                               </div>
                               <div class="detail__product-statistic">
                                  <a href="" class="detail__product-statistic-review detail__product-statisctic-item">
-                                    <span class="detail__product-statistic-review-number detail__product-statistic-review-number--underline">4.8</span>
-                                    <span class="detail__product-statistic-review-star-wrap">
-                                       <i class="fa-solid fa-star detail__product-statistic-review-star"></i>
-                                       <i class="fa-solid fa-star detail__product-statistic-review-star"></i>
-                                       <i class="fa-solid fa-star detail__product-statistic-review-star"></i>
-                                       <i class="fa-solid fa-star detail__product-statistic-review-star"></i>
-                                       <i class="fa-solid fa-star detail__product-statistic-review-star"></i>
-                                    </span>
+                                    <span class="detail__product-statistic-review-number detail__product-statistic-review-number-average detail__product-statistic-review-number--underline">4.2</span>
+                                    <span class="detail__product-statistic-review-star-wrap"><i class="fa-solid fa-star detail__product-statistic-review-star"></i><i class="fa-solid fa-star detail__product-statistic-review-star"></i><i class="fa-solid fa-star detail__product-statistic-review-star"></i><i class="fa-solid fa-star detail__product-statistic-review-star"></i><i class="fa-thin fa-star detail__product-statistic-review-star"></i></span>
                                  </a>
                                  <span class="detail__product-statistic-seperate"></span>
                                  <a href="" class="detail__prodduct-statistic-item">
@@ -525,7 +526,7 @@
                                  </a>
                                  <span class="detail__product-statistic-seperate"></span>
                                  <span class="detail__prodduct-statistic-item">
-                                    <span class="detail__product-statistic-sold-number">5,3k</span>
+                                    <span class="detail__product-statistic-sold-number">1,9k</span>
                                     <span class="detail__prodduct-statistic-text">Đã Bán</span>
                                     
                                  </span>
@@ -535,10 +536,10 @@
                                     <span class="detail__product-price--original price-pre">89.000</span>
                                     <span class="detail__product-price--saleoff price-pre">65.000</span>
                                     <span class="detail__product-price--percent favourite">
-                                       <span class="detail__product-price-percent-number">27</span>%
+                                       <span class="detail__product-price-percent-number">26</span>%
                                        Giảm
                                     </span>                                
-
+   
                                  </div>
                                  <div class="detail__product-other-item detail__product-voucher">
                                        <span class="detail__product-other-item-text">Mã Giảm Giá Của Shop</span>
@@ -602,8 +603,8 @@
                                  <button class="btn btn--primary detail__product-other-btn detail__product-other-buy">Mua ngay</button>                
                               </div>
                            </div>
-
-
+   
+   
                         </div>
                      </div>
                   </div>
@@ -612,13 +613,11 @@
             </header>
             <div class="detail__shop shadow--block">
                <div class="detail__shop-avatar">
-                  <img src="https://cf.shopee.vn/file/2cccee51e8b6fe559263f779e3534774_tn" alt="" class="dtail__shop-img">
+                  <img src="./assets/img/user/2.png" alt="" class="detail__shop-img">
                   <span class="detail__shop-favourite favourite">Yêu thích</span>
                </div>
                <div class="detail__shop-middle">
-                  <span class="detail__shop-name">
-                     giaydepso1vn_minshop
-                  </span>
+                  <span class="detail__shop-name">happyfamily</span>
                   <div class="detail__shop-status">
                      Online 59 Phút Trước
                   </div>
@@ -644,7 +643,7 @@
                      </div>
                      <div class="detail__shop-item">
                         <span class="detail__shop-title">Sản Phẩm</span>
-                        <span class="detail__shop-number">69</span>
+                        <span class="detail__shop-number detail__shop-number--product">6</span>
                      </div>
                   </div>
                   <div class="detail__shop-col">
@@ -669,10 +668,378 @@
                   </div>
                </div>
             </div>
+            <div class="detail__content">
+               <div class="row">
+                  <div class="col-9-6 custom-col--right">
+                     <div class="detail__describe shadow--block ">
+                        <h2 class="detail__describe-title">Mô Tả Sản Phẩm</h2>
+                        <span class="detail__describe-content">[HCM]Dép Quai Ngang Nữ Nam EV Cao Cấp Cao Su Nguyên KhốiSiêu Nhẹ Siêu Êm Chống Nắng Chống Nước<br><br>- SHOP CÓ RẤT NHIỀU MẪU CÁC BẠN NHỚ CLICK VÀO MỤC TẤT CẢ SẢN PHẨM ĐỂ XEM THÊM NHÉ:<br>⭐️ CAM KẾT VÀ BẢO ĐẢM <br>✔CAM KẾT: HÌNH CHỤP THẬT 100% SẢN PHẨM <br>✔CAM KẾT: Giá tốt nhất thị trường. <br>-Đảm Bảo Chất Lượng , Mẫu Mã Đa Dạng<br>-Cảm Ơn Khách Hàng Luôn Tin Tưởng Và Ủng Hộ Shop <br>- NHẬN SỈ TOÀN QUỐC <br><br>DÉP ĐI TRONG NHÀ , DÉP BÁNH MÌ QUAI NGANG NỮ<br>Chất liệu đế: PU kết hợp bề mặt EVA họa tiết hoạt hình siêu ngầu<br>Chiều cao đế: 4.5cm<br>Kiểu dáng : dép đúc nguyên khối nhẹ mềm êm<br>Màu sắc: Đen, trắng<br>Dễ dàng vệ sinh<br>Full size : 36, 37, 38, 39, 40, 41, 42, 43, 44, 45<br>---------------------------------------------<br>Ưu điểm của DÉP ĐI TRONG NHÀ , DÉP BÁNH MÌ QUAI NGANG NỮ:<br>-	Thoải mái, êm chân khi đi trong nhiều giờ.<br>-	Tiện lợi khi mang vì chỉ cần một thao tác xỏ chân.<br>-	Tính thẩm mỹ cao độ đa dạng kiểu dáng, thiết kế.<br>-	Dễ kết hợp với nhiều loại trang phục, phụ kiện.<br>-	Ứng dụng khi đi dạo phố, đi chơi, đi làm, đi biển, ...<br>#dép_bánh_mì_nữ #dép_nữ_bánh_mì #dép_quai_ngang #dep_banh_mi_nữ #depbanhmi #dep_banh_mi_quai_ngang #dep_quai_ngang #dep_banh_mi #dep_sieu_nhe #dep_unisex #giay_dep_nhap_khau #khosi_ducphuc #giay_dep_duc_phuc #duc_phuc #depbanhminu #khosiducphuc #giaydepducphuc #dép_quai_bảng #dep_nữ_đúc  #dép_đúc_nữ #dép_bánh_mì_quai_ngang #dep_banh_mi #dép_bánh_mì #dép_hot #dep_hot #dép_bánh_mì_giá_rẻ #dép_bánh_mì_hot #dép_bánh_mì_2021 #dép_bánh_mì_quai_ngang_nữ</span>
+   
+                     </div>
+                     <div class="detail__rating shadow--block">
+                        <h2 class="detail__rating-title">
+                           Đánh Giá Sản Phẩm
+                        </h2>
+                        <div class="detail__rating-action">
+                           <textarea class="detail__rating-action-input form-control" rows="4" placeholder="Bạn nghĩ gì về sản phẩm này?" spellcheck="false"></textarea>
+                           <button class="btn btn--primary detail__rating-action-btn">Đánh giá</button>
+                           <span class="detail__rating-action-star-wrap">
+                              <span class="detail__rating-action-hover " data-number="1">
+                              <i class="fa-star fa-solid detail__rating-action-star detail__rating-action-star--filled"></i>
+                              <i class="fa-light fa-star detail__rating-action-star detail__rating-action-star--not-filled"></i>
+                           </span>
+                           <span class="detail__rating-action-hover " data-number="2">
+                              <i class="fa-star fa-solid detail__rating-action-star detail__rating-action-star--filled"></i>
+                              <i class="fa-light fa-star detail__rating-action-star detail__rating-action-star--not-filled"></i>
+                           </span>
+                           <span class="detail__rating-action-hover " data-number="3">
+                              <i class="fa-star fa-solid detail__rating-action-star detail__rating-action-star--filled"></i>
+                              <i class="fa-light fa-star detail__rating-action-star detail__rating-action-star--not-filled"></i>
+                           </span>
+                           <span class="detail__rating-action-hover " data-number="4">
+                              <i class="fa-star fa-solid detail__rating-action-star detail__rating-action-star--filled"></i>
+                              <i class="fa-light fa-star detail__rating-action-star detail__rating-action-star--not-filled"></i>
+                           </span>
+                           <span class="detail__rating-action-hover " data-number="5">
+                              <i class="fa-star fa-solid detail__rating-action-star detail__rating-action-star--filled"></i>
+                              <i class="fa-light fa-star detail__rating-action-star detail__rating-action-star--not-filled"></i>
+                           </span>
+                              
+                              
+                           </span>
+                        </div>
+                        <div class="detail__rating-pin">
+                           <div class="detail__rating-pin-comment-wrap"><div class="detail__rating-pin-comment slide-in">
+            <img src="https://cf.shopee.vn/file/93425e3b852a0051be9b9c11037e7c1c_tn" alt="" class="detail__rating-pin-avatar">
+            <div class="detail__rating-pin-content-wrapper">
+               <span class="detail__rating-pin-content ">Hình ảnh y như trên hình . Ko chê được . Đóng gói chắc chắn . Dù có bị lỗi 1 chút ở phần đế , nhưng ko sao vì shop nhiệt tình đổi cho mình . Sẽ tiếp tục ủng hộ shop làn tới nhé 😍😍😍</span>
+            </div>
+            </div></div>
+                           
+                           <!-- <div class="detail__rating-pin-comment">
+                              <img src="https://cf.shopee.vn/file/521d949cb6c839fa1633bda36705e37d_tn" alt="" class="detail__rating-pin-avatar">
+                              <span class="detail__rating-pin-content">Dép đẹp, phù hợp với giá tiền Ổnnnnnnnnnnnnnnnnnnnnnnnnnnn. nên mua áaa :)) giao hàng nhanh , săn sale nên giá hờii siêu ưngg :)))Đi rất vừa vặn
+                              Tốt trong phân khúc giá tiền
+                              Nếu đc shop có thể đóng gói kĩ hơn một chuý để lúc nhận hàng ko bị móp méo
+                                 </span>
+                           </div> -->
+                           <div class="detail__rating-pin-circle"><span class="detail__rating-pin-circle-item"></span><span class="detail__rating-pin-circle-item"></span><span class="detail__rating-pin-circle-item"></span><span class="detail__rating-pin-circle-item detail__rating-pin-circle-item--active"></span><span class="detail__rating-pin-circle-item"></span></div>
+                           <div class="detail__rating-pin-next">
+                              <i class="fa-regular fa-angle-right"></i>
+                           </div>
+                           <div class="detail__rating-pin-prev">
+                              <i class="fa-regular fa-angle-left"></i>
+                           </div>
+                        </div>
+                        <div class="detail__rating-overview">
+                           <div class="detail__rating-overview-score">
+                              <div class="detail__rating-score-number">
+                                 <span class="detail__rating-score-point">4.2</span>
+                                 <span class="detail__rating-score-text">trên 5</span>
+                              </div>
+                              <div class="detail__rating-score-star"><i class="fa-solid fa-star detail__rating-score-icon"></i><i class="fa-solid fa-star detail__rating-score-icon"></i><i class="fa-solid fa-star detail__rating-score-icon"></i><i class="fa-solid fa-star detail__rating-score-icon"></i><i class="fa-thin fa-star detail__rating-score-icon"></i></div>
+                           </div>
+                           <div class="detail__rating-overview-btn">
+                              </span>
+                              <span class="detail__rating-overview-item detail__rating-overview-item--active">Tất Cả
+   
+                                 </span>
+                                 <span class="detail__rating-overview-item">
+                                    5 Sao (<span class="detail__rating-overview-number" data-number="5">1,8k</span>)
+   
+                                 </span>
+                                 <span class="detail__rating-overview-item">
+                                    4 Sao (<span class="detail__rating-overview-number" data-number="4" >115</span>)
+   
+                                 </span>
+                                 <span class="detail__rating-overview-item">
+                                    3 Sao (<span class="detail__rating-overview-number" data-number="3">43</span>)
+   
+                                 </span>
+                                 <span class="detail__rating-overview-item">
+                                    2 Sao (<span class="detail__rating-overview-number" data-number="2">9</span>)
+   
+                                 </span>
+                                 <span class="detail__rating-overview-item">
+                                    1 Sao (<span class="detail__rating-overview-number" data-number="1">38</span>)
+   
+                                 </span>
+                              
+                           </div>
+                        </div>
+                        <div class="detail__rating-comment">
+                           <div class="detail__rating-comment-item-wrap"><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/1.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">minhthu</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-thin fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">Không hiểu sao dép chiếc to chiếc nhỏ hayy thật sự luôn á. Giá nhận dép vậy cũng được mà đii 1 bên cứ cảm giác to hơn khó chịu thật sự</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/1.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">minhthu</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">Shop giao đầy đủ hàng và đúng theo đơn đã đặt. Sản phẩm nguyên vẹn do được đóng gói cẩn thận, chắc chắn. Sản phẩm theo nhận định là tốt để có thể sử dụng!</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/5.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">quehai</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-thin fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">Dép đẹp nhưng nhìn kh biết có bền không. Nhìn chung giá rẻ nên mua thử</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/8.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">huyenmun23</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">Hàng chất lượng, giao hàng nhanh, ảnh mang tính chất nhận xuuuu</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/4.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">quynhnhu</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-thin fa-star"></i><i class="fa-thin fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">dép khá là đẹp shop phục vụ tốt dićh vú shipper cũng khá là ổn rất hợp với giá tiền nên đánh giá shop 5 sao nếu sài bền thì mình sẽ quay lại ủng hộ shop</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div><div class="detail__rating-comment-item">
+                     <div class="detail__rating-comment-ava">
+                        <img src="./assets/img/user/7.png" alt="" class="detail__rating-comment-avatar">
+                     </div>
+                     <div class="detail__rating-comment-wrapper">
+                        <div class="detail__rating-comment-up">
+                           <span class="detail__rating-comment-name">sunnyday</span>
+                           <span class="detail__rating-comment-rated">đã đánh giá</span>
+                           <span class="detail__rating-comment-star">
+                              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-thin fa-star"></i>
+                           </span>
+                        </div>
+                        <div class="detail__rating-comment-content">Dép đep, nên mua nhé cả nhà. Mk mua cho em trai, nó ưng jjjhjjjk</div>
+                     </div>
+                     <div class="detail__rating-comment-pin detail__rating-comment-pin--active">
+                        <!-- <i class="fa-solid fa-bookmark "></i> -->
+                        <i class="fa-light fa-bookmark"></i>
+                     </div>
+                  </div></div>
+                           
+                        </div>
+                        <div style="display: flex;">
+                           <div class="sortby__pagination detail__rating-pagination">
+                                 <button class="sortby__move-item sortby__move-item-left btn detail__rating-pagination--prev btn--disabled">
+                                    <i class="fa-regular fa-angle-left"></i>
+                                 </button>
+                                 <div class="detail__rating-pagination-page">
+                                    <span class="sortby__page-current detail__rating-pagination-current">
+                                       1
+                                    </span>
+                                    /
+                                    <span class="sortby__page-max detail__rating-pagination-current-max">23</span>
+                                 </div>
+                                 <button class="sortby__move-item  sortby__move-item-right btn detail__rating-pagination--next">
+                                    <i class="fa-regular fa-angle-right"></i>
+                                 </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-2-4 custom-col--left">
+                     <div class="detail__other shadow--block">
+                        <div class="detail__other-title">Sản phẩm khác của shop</div>
+                        <div class="detail__other-item-wrapper"><a class="detail__other-item" href="#">
+                     <div class="detail__other-img img-background" style="background-image: url(./assets/img/product/24.png);">
+                     </div>
+                     <h4 class="detail__other-name">Bộ Tông đơ cắt tóc gia đình 🌸FREESHIP🌸 Bảo hành 12 tháng Mã sản phẩm KN125
+                     </h4>
+                     <div class="detail__other-price price-pre">300.000</div>
+                  </a><a class="detail__other-item" href="#">
+                     <div class="detail__other-img img-background" style="background-image: url(./assets/img/product/20.png);">
+                     </div>
+                     <h4 class="detail__other-name">Nồi lẩu nướng điện 3 khay Bear bếp đa năng hàng quốc tế tích hợp 3 trong 1 siêu tiện lơi Gia dụng Bear Tuli Mart
+                     </h4>
+                     <div class="detail__other-price price-pre">2.480.000</div>
+                  </a><a class="detail__other-item" href="#">
+                     <div class="detail__other-img img-background" style="background-image: url(./assets/img/product/22.png);">
+                     </div>
+                     <h4 class="detail__other-name">Ấm Siêu Tốc Đun Nước 1.8 Lít , Ấm đun siêu tốc Electric Kettle
+                     </h4>
+                     <div class="detail__other-price price-pre">100.000</div>
+                  </a><a class="detail__other-item" href="#">
+                     <div class="detail__other-img img-background" style="background-image: url(./assets/img/product/4.png);">
+                     </div>
+                     <h4 class="detail__other-name">Đèn tích điện 3 màu ánh sáng có lợi cho mắt
+                     </h4>
+                     <div class="detail__other-price price-pre">119.200</div>
+                  </a><a class="detail__other-item" href="#">
+                     <div class="detail__other-img img-background" style="background-image: url(./assets/img/product/3.png);">
+                     </div>
+                     <h4 class="detail__other-name">Áo giữ nhiệt nam Smart Heat giữ ẩm mỏng nhẹ Coolmate
+                     </h4>
+                     <div class="detail__other-price price-pre">269.000</div>
+                  </a></div>
+                     </div>
+                  </div>                  
+               </div>
+            </div>
+         </div>
+      </div> <!-- end detail -->
+      <div class="sell__container hide">
+         <div class="grid">
+            <div class="sell">
+               <div class="sell-wrap">
+                  <h3 class="sell-header">Đăng bán sản phẩm</h3>
+                  <input type="text" class="sell-name form-control" placeholder="Tên sản phẩm">
+                  <div class="sell-price-wrap">
+                     <input type="number" class="sell-saleOff form-control" placeholder="Giá khuyến mãi" step="100000">
+                     <input type="number" class="sell-price form-control" placeholder="Giá niêm yết" step="100000">
+                  </div>
+                  <textarea type="text" class="sell-describe form-control" placeholder="Mô tả sản phẩm" spellcheck="false"></textarea>
+                  <div class="sell-other-wrap">
+                     <input type="checkbox" id="sell-freeship">
+                     <label for="sell-freeship" class="sell-freeship-text">Miễn phí vận chuyển</label>
+                     <div class="sell-category">
+                        <button class="sell-category-title btn btn--white">
+                           <span class="sell-category-text">Chọn danh mục</span>
+                           <i class="fa-light fa-caret-down"></i>
+                        </button>
+                        <ul class="sell-list hide">
+                           <li class="sell-item">Điện thoại</li>
+                           <li class="sell-item">Máy tính bảng</li>
+                           <li class="sell-item">Gia đình</li>
+                           <li class="sell-item">Tivi thông minh</li>
+                           <li class="sell-item">Nhà sách</li>
+                           <li class="sell-item">Đồng hồ</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <button class="sell-btn btn btn--primary">Đăng bán</button>
+                  <span class="sell-link hide">Xem sản phẩm</span>
+                  
+               </div>
+              
+            </div>
          </div>
       </div>
       <footer class="footer">
-         
+         <div class="grid">
+            <div class="row">
+               <div class="col-3">
+                  <h3 class="footer-title">Về Shopee</h3>
+                  <a href="#" class="footer-link">Giới thiệu về Shopee</a>
+                  <a href="#" class="footer-link">Điều khoản Shopee</a>
+                  <a href="#" class="footer-link">Kênh người bán</a>
+                  <a href="#" class="footer-link">Tuyển dụng</a>
+                  <a href="#" class="footer-link">Hàng chính hãng</a>
+               </div>
+               <div class="col-3">
+                  <h3 class="footer-title">Chăm Sóc Khách Hàng</h3>
+                  <a href="#" class="footer-link">Câu hỏi thường xuyên</a>
+                  <a href="#" class="footer-link">Hướng dẫn mua hàng</a>
+                  <a href="#" class="footer-link">Hướng dẫn bán hàng</a>
+                  <a href="#" class="footer-link">Vận chuyển</a>
+                  <a href="#" class="footer-link">Trả Hàng & Hoàn Tiền</a>
+
+               </div>
+               <div class="col-3">
+                  <h3 class="footer-title">Tải Ứng Dụng</h3>
+                  <div class="footer-download">
+                     <img src="./assets/img/qrcode.png" alt="" class="footer-qr">
+                     <div class="footer-store">
+                        <a href="#" class="footer-down">
+                           <img src="./assets/img/appstore.png" alt="">
+                        </a>
+                        <a href="#" class="footer-down">
+                           <img src="./assets/img/googleplay.png" alt="">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-3">
+                  <h3 class="footer-title">Địa Chỉ</h3>
+                  <ul class="footer-list">
+                     <li class="footer-item">
+                        Tầng 29 của tòa nhà trung tâm Lotte Hà Nội, số 54 Liễu Giai, Phường Cống Vị, Quận Ba Đình, Hà Nội
+                     </li>
+                     <li class="footer-item">
+                        Tầng 12 của tòa nhà Capital Building, số 41 Hai Bà Trưng, Phường Tràng Tiền, Quận Hoàn Kiếm, Hà Nội
+                     </li>
+                  </ul>
+               </div>
+               
+            </div>
+            <div class="footer-foot">
+               <span class="footer-copyright">© 2021 Shopee. Tất cả các quyền được bảo lưu.</span>
+               <span class="footer-social">
+                  <a href="" class="footer-facebook">
+                     <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="" class="footer-instagram">
+                     <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="" class="footer-youtube">
+                     <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="" class="footer-linkedin">
+                     <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+               </span>
+            </div>
+         </div>
       </footer>
       
       <!-- Modal -->
@@ -773,6 +1140,31 @@
                      </div>
                      <i class="fa-solid fa-rotate-left modal--reg__captcha-icon"></i>
                   </div>
+                  
+                  <div class="form-group modal--reg__type">
+                     <span class="modal--reg__type-text">Loại tài khoản:</span>
+                     <div class="modal--reg__type-wrap">
+                        <label for="reg-type--0" class="modal--reg__type-title">Người mua</label>
+                        <input type="radio" name="reg-type" id="reg-type--0" value = "0" checked>
+                        <label for="reg-type--1" class="modal--reg__type-title">Người bán</label>
+                        <input type="radio" name="reg-type" id="reg-type--1" value = "1">
+                     </div>
+                  </div>
+                  <div class="form-group modal--reg__city hide">
+                     <input type="text" class="form-control modal--reg__city-input" placeholder="Quận, phường,...">
+                     <div class="modal--reg__city-wrap">
+                        <div class="modal--reg__city-btn btn btn--white">
+                           <span class="modal--reg__city-btn-text">Chọn thành phố</span>
+                           <i class="modal--reg__city-btn-icon fa-regular fa-caret-down"></i>
+                        </div>
+                        <ul class="modal--reg__city-list hide">
+                           <li class="modal--reg__city-item">Hà Nội</li>
+                           <li class="modal--reg__city-item">Hải Phòng</li>
+                           <li class="modal--reg__city-item">HCM</li>
+                        </ul>
+                     </div>
+                  </div>
+                  
                   <input type="submit" class="btn btn--block btn--primary submit-form reg-btn-js" value="Đăng Ký">
                </form>
                <div class="modal__text-or text--muted">
@@ -868,11 +1260,12 @@
          <!-- End: Toast Notification -->
       </div>
 
-      <!-- Testing -->
-      <div class="testing">
-         <button class="testing__move--detail btn btn--primary">
-            Chuyển trang
-         </button>
+      <!-- Loading -->
+      <div class="loading hide">
+         <div class="loading-wrapper">
+            <div class="loading-text">Bạn vui lòng chờ nhé!</div>
+            <div class="loading-icon fa-duotone fa-spinner-third"></div>
+         </div>
       </div>
       
       
